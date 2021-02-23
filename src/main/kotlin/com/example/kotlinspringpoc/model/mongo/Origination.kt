@@ -9,7 +9,7 @@ import kotlin.Double as KotlinDouble
 @Document
 data class Origination(
     @Id
-    val _id: UUID,
+    val id: UUID,
     val cpf: String,
     val value: KotlinDouble,
     val originationDate: Date

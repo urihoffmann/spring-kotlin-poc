@@ -2,11 +2,9 @@ package com.example.kotlinspringpoc.controller
 
 import com.example.kotlinspringpoc.dao.mongo.OriginationDAO
 import com.example.kotlinspringpoc.dto.OriginationDTO
-import com.example.kotlinspringpoc.model.mongo.Limit
 import com.example.kotlinspringpoc.model.mongo.Origination
 import com.example.kotlinspringpoc.service.OriginationService
 import org.springframework.http.ResponseEntity
-import org.springframework.http.ResponseEntity.*
 import org.springframework.web.bind.annotation.*
 
 @RestController
