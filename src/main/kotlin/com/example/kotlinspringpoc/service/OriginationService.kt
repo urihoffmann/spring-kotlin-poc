@@ -6,8 +6,10 @@ import com.example.kotlinspringpoc.dto.OriginationDTO
 import com.example.kotlinspringpoc.model.mongo.Limit
 import com.example.kotlinspringpoc.model.mongo.Origination
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional
 class OriginationService(private val originationDAO: OriginationDAO, private val limitDAO: LimitDAO) {
 
     fun registerOrigination(originationDTO: OriginationDTO) {
@@ -20,6 +22,7 @@ class OriginationService(private val originationDAO: OriginationDAO, private val
             throw RuntimeException("Borrower with cpf ${originationDTO.cpf} does not have sufficient limit")
         } else {
             limitDAO.save(Limit(originationDTO.cpf, newLimitValue))
+//            throw RuntimeException("fail")
             originationDAO.save(Origination(originationDTO.cpf, originationDTO.value))
         }
     }

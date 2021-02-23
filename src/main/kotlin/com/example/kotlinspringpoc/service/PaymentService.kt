@@ -7,8 +7,10 @@ import com.example.kotlinspringpoc.dto.PaymentDTO
 import com.example.kotlinspringpoc.model.mongo.Limit
 import com.example.kotlinspringpoc.model.mongo.Payment
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional
 class PaymentService(private val paymentDAO: PaymentDAO, private val originationDAO: OriginationDAO, private val limitDAO: LimitDAO) {
 
     fun registerPayment(paymentDTO: PaymentDTO) {
