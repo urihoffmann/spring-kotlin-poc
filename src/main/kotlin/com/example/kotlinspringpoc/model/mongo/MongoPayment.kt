@@ -1,25 +1,26 @@
 package com.example.kotlinspringpoc.model.mongo
 
-import org.bson.types.ObjectId
-import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.util.*
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
 import kotlin.Double as KotlinDouble
 
 @Document
-data class Payment(
+data class MongoPayment(
     @Id
     val id: UUID,
     val cpf: String,
-    val value: KotlinDouble,
-    val paymentDate: Date,
-    val originationId: UUID
+    val value: kotlin.Double,
+    val originationId: UUID,
+    val paymentDate: Date? = Date(),
 ) {
-    constructor(cpf: String, value: KotlinDouble, originationId: UUID) : this(
+    constructor(cpf: String, value: kotlin.Double, originationId: UUID): this(
         UUID.randomUUID(),
         cpf,
         value,
-        Date(),
         originationId
     )
+
 }

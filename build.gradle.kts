@@ -22,6 +22,8 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.postgresql:postgresql")
 //	implementation("de.flapdoodle.embed:de.flapdoodle.embed.mongo")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
